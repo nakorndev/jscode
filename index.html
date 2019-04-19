@@ -83,11 +83,11 @@
     if (e.keyCode == 13 && e.altKey) {
       runCode();
     }
-    if (e.keyCode == 83 && (navigator.platform.match('Mac') ? e.metaKey : e.ctrlKey)) {
-      e.preventDefault();
-      alert('captured');
-    }
   }, false)
+
+  window.onbeforeunload = function() {
+    return true;
+  };
 
 </script>
 </body>
