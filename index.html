@@ -54,9 +54,9 @@
 <div id="code"></div>
 <button id="run-code" class="button" type="button" onclick="runCode()">Run code (Alt + Enter)</button>
 
-<script src="monaco-editor/loader.js"></script>
+<script src="vs/loader.js"></script>
 <script>
-	require.config({ paths: { 'vs': 'monaco-editor' }});
+	require.config({ paths: { 'vs': 'vs' }});
 
 	require(['vs/editor/editor.main'], function() {
     window.$editor = monaco.editor.create(document.getElementById('code'), {
