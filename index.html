@@ -64,11 +64,7 @@
       automaticLayout: true,
       scrollBeyondLastLine: false,
       fontSize: '18px',
-			value: [
-        "'use strict'",
-        "// code",
-        ""
-			].join('\n'),
+			value: window.localStorage.getItem('code') || '// code\n',
 			language: 'javascript'
 		});
   });
@@ -88,7 +84,7 @@
   }, false)
 
   window.onbeforeunload = function() {
-    return true;
+    window.localStorage.setItem('code', window.$editor.getValue());
   };
 
 </script>
