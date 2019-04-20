@@ -73,7 +73,7 @@
 
   function runCode() {
     try {
-      eval(window.$editor.getValue());
+      eval(`(function() { ${window.$editor.getValue()} })()`);
     } catch (err) {
       alert('❌ ' + err.message);
     }
